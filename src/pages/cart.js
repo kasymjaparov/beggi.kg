@@ -10,7 +10,6 @@ import cart_item_image from "../../public/example.jpg"
 import React from "react"
 import MainLayout from "@/layouts/MainLayout"
 import CartItem from "@/widgets/CartItem"
-import { Outbound } from "@mui/icons-material"
 
 const boxStyles = {
   background: "#fff",
@@ -24,7 +23,45 @@ const boxStyles = {
   },
 }
 
-const Cart = ({ cartItems }) => {
+const Cart = () => {
+  const cartItems = [
+    {
+      id: 1,
+      price: 599,
+      image: cart_item_image,
+      category: "Кардиган",
+      title: "Gucci rx580",
+      subtitle: "Женский",
+      amount: 1,
+    },
+    {
+      id: 1,
+      price: 599,
+      image: cart_item_image,
+      category: "Кардиган",
+      title: "Gucci rx580",
+      subtitle: "Женский",
+      amount: 1,
+    },
+    {
+      id: 1,
+      price: 599,
+      image: cart_item_image,
+      category: "Кардиган",
+      title: "Gucci rx580",
+      subtitle: "Женский",
+      amount: 1,
+    },
+    {
+      id: 1,
+      price: 599,
+      image: cart_item_image,
+      category: "Кардиган",
+      title: "Gucci rx580",
+      subtitle: "Женский",
+      amount: 1,
+    },
+  ]
   return (
     <MainLayout title="Корзина">
       <Box sx={boxStyles}>
@@ -115,47 +152,5 @@ const Cart = ({ cartItems }) => {
     </MainLayout>
   )
 }
-export const getServerSideProps = async context => {
-  const cartItems = [
-    {
-      id: 1,
-      price: 599,
-      image: cart_item_image,
-      category: "Кардиган",
-      title: "Gucci rx580",
-      subtitle: "Женский",
-      amount: 1,
-    },
-    {
-      id: 1,
-      price: 599,
-      image: cart_item_image,
-      category: "Кардиган",
-      title: "Gucci rx580",
-      subtitle: "Женский",
-      amount: 1,
-    },
-    {
-      id: 1,
-      price: 599,
-      image: cart_item_image,
-      category: "Кардиган",
-      title: "Gucci rx580",
-      subtitle: "Женский",
-      amount: 1,
-    },
-    {
-      id: 1,
-      price: 599,
-      image: cart_item_image,
-      category: "Кардиган",
-      title: "Gucci rx580",
-      subtitle: "Женский",
-      amount: 1,
-    },
-  ]
-  return {
-    props: { cartItems },
-  }
-}
+
 export default Cart
