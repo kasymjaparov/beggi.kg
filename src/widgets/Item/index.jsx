@@ -2,9 +2,10 @@ import { Box, Button, Stack, Typography } from "@mui/material"
 import React from "react"
 import image from "../../../public/example.jpg"
 import Image from "next/image"
-import { Inter } from "@next/font/google"
+import { useRouter } from "next/router"
 
 const Item = () => {
+  const router = useRouter()
   return (
     <Box>
       <Box sx={{ position: "relative", width: "100%", height: "280px" }}>
@@ -24,6 +25,7 @@ const Item = () => {
       </Stack>
       <Stack>
         <Button
+          onClick={() => router.push("/cart")}
           sx={{ width: "80%", margin: "0 auto 0 auto" }}
           variant="contained"
         >
