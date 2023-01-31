@@ -89,8 +89,12 @@ const Cart = () => {
           <Grid item lg={4} sm={12} xs={12}>
             <Typography
               sx={{
-                fontSize: "18px",
-                marginBottom: "13px",
+                fontSize: "20px",
+                fontWeight: 700,
+                mb: "20px",
+                "@media(max-width:768px)": {
+                  fontSize: "18px",
+                },
               }}
             >
               Итог заказа
@@ -121,7 +125,7 @@ const Cart = () => {
                 },
               }}
             >
-              <Typography>Общая сумма</Typography>
+              <Typography sx={{ fontWeight: 500 }}>Общая сумма</Typography>
               <Typography>2 396 сом</Typography>
             </Stack>
             <Stack spacing={2} sx={{ mb: "16px" }}>

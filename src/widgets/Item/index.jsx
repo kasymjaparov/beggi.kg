@@ -18,7 +18,7 @@ const Item = () => {
           }}
         />
       </Box>
-      <Stack sx={{ cursor: "pointer", my: "20px" }} alignItems="center">
+      <Stack sx={{ cursor: "pointer", my: "10px" }} alignItems="center">
         <Typography sx={{ fontWeight: 700 }}>Костюм "FIY MOOD"</Typography>
         <Typography>Размеры: 50/52/54</Typography>
         <Typography>1050 сом</Typography>

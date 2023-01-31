@@ -23,7 +23,6 @@ const CartItem = ({ data }) => {
           />
         </Box>
       )}
-
       <Stack
         direction="row"
         justifyContent={"space-between"}
@@ -41,7 +40,7 @@ const CartItem = ({ data }) => {
               fontSize: "12px",
               fontWeight: "600",
               "@media(max-width:650px)": {
-                fontSize: "8px",
+                fontSize: "10px",
               },
             }}
           >
@@ -49,10 +48,10 @@ const CartItem = ({ data }) => {
           </Typography>
           <Typography
             sx={{
-              fontSize: "10px",
+              fontSize: "12px",
               fontWeight: "600",
               "@media(max-width:650px)": {
-                fontSize: "8px",
+                fontSize: "10px",
               },
             }}
             component="h4"
