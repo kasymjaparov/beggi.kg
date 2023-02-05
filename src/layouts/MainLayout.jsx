@@ -1,3 +1,4 @@
+import Footer from "@/widgets/Footer"
 import Header from "@/widgets/Header"
 import Head from "next/head"
 import React from "react"
@@ -8,6 +9,7 @@ const MainLayout = ({ children, title }) => {
     <>
       <Header />
       <WithHeadLayout title={title}>{children}</WithHeadLayout>
+      <Footer />
     </>
   )
 }
