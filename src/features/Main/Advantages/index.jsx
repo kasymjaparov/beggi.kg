@@ -53,7 +53,7 @@ const Advantages = () => {
         container
         spacing={2}
         sx={{
-          margin: "50px auto 0 auto",
+          marginTop: "50px",
         }}
       >
         <Grid item xl={4} lg={4} md={12} sm={12} xs={12}>
