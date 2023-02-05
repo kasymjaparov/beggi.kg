@@ -51,6 +51,7 @@ const Advantages = () => {
       </Typography>
       <Grid
         container
+        spacing={2}
         sx={{
           margin: "50px auto 0 auto",
         }}
