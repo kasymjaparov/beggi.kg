@@ -1,6 +1,12 @@
 import React from "react"
-import Typography from "@mui/material/Typography"
-import { Box, Button, FormControl, OutlinedInput, Stack } from "@mui/material"
+import {
+  Box,
+  Button,
+  FormControl,
+  OutlinedInput,
+  Stack,
+  Typography,
+} from "@mui/material"
 import Image from "next/image"
 
 const ContactUs = () => {
