@@ -83,3 +83,9 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+.bannerImage {
+  background: url("../../public/bg_1.png.webp") center / cover;
+  height: 80vh;
+  width: 120%;
+  overflow-x: hidden;
+}
