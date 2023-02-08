@@ -1,5 +1,4 @@
 import { Box, Grid, Typography } from "@mui/material"
-import { Inter, Open_Sans } from "@next/font/google"
 import React from "react"
 
 const Contact = () => {
@@ -79,30 +78,12 @@ const Contact = () => {
               },
             }}
           >
-            Бишкек
+            Кыргызстан, Бишкек
           </Typography>
+
           <Box component="address" sx={{ mb: "13px" }}>
-            <Typography sx={{ fontWeight: 700, mb: "8px" }}>Офис</Typography>
-            <Typography
-              sx={{
-                fontSize: "16px",
-                "@media(max-width:1020px)": {
-                  fontSize: "14px",
-                  mb: "13px",
-                },
-                "@media(max-width:968px)": {
-                  mb: "13px",
-                  fontSize: "13px",
-                },
-                "@media(max-width:768px)": {
-                  mb: "13px",
-                },
-                "@media(max-width:640px)": {
-                  fontSize: "12px",
-                },
-              }}
-            >
-              ул. +996 558 999 000
+            <Typography sx={{ fontWeight: 700, mb: "8px" }}>
+              Контакты
             </Typography>
             <Typography
               sx={{
@@ -123,97 +104,7 @@ const Contact = () => {
                 },
               }}
             >
-              ул. +996 558 999 000
-            </Typography>
-          </Box>
-          <Box component="address" sx={{ mb: "13px" }}>
-            <Typography sx={{ fontWeight: 700, mb: "8px" }}>Офис</Typography>
-            <Typography
-              sx={{
-                fontSize: "16px",
-                "@media(max-width:1020px)": {
-                  fontSize: "14px",
-                  mb: "13px",
-                },
-                "@media(max-width:968px)": {
-                  mb: "13px",
-                  fontSize: "13px",
-                },
-                "@media(max-width:768px)": {
-                  mb: "13px",
-                },
-                "@media(max-width:640px)": {
-                  fontSize: "12px",
-                },
-              }}
-            >
-              ул. +996 558 999 000
-            </Typography>
-            <Typography
-              sx={{
-                fontSize: "16px",
-                "@media(max-width:1020px)": {
-                  fontSize: "14px",
-                  mb: "13px",
-                },
-                "@media(max-width:968px)": {
-                  mb: "13px",
-                  fontSize: "13px",
-                },
-                "@media(max-width:768px)": {
-                  mb: "13px",
-                },
-                "@media(max-width:640px)": {
-                  fontSize: "12px",
-                },
-              }}
-            >
-              ул. +996 558 999 000
-            </Typography>
-          </Box>
-          <Box component="address" sx={{ mb: "13px" }}>
-            <Typography sx={{ fontWeight: 700, mb: "8px" }}>Офис</Typography>
-            <Typography
-              sx={{
-                fontSize: "16px",
-                "@media(max-width:1020px)": {
-                  fontSize: "14px",
-                  mb: "13px",
-                },
-                "@media(max-width:968px)": {
-                  mb: "13px",
-                  fontSize: "13px",
-                },
-                "@media(max-width:768px)": {
-                  mb: "13px",
-                },
-                "@media(max-width:640px)": {
-                  fontSize: "12px",
-                },
-              }}
-            >
-              ул. +996 558 999 000
-            </Typography>
-            <Typography
-              sx={{
-                fontSize: "16px",
-                "@media(max-width:1020px)": {
-                  fontSize: "14px",
-                  mb: "13px",
-                },
-                "@media(max-width:968px)": {
-                  mb: "13px",
-                  fontSize: "13px",
-                },
-                "@media(max-width:768px)": {
-                  mb: "13px",
-                },
-                "@media(max-width:640px)": {
-                  fontSize: "12px",
-                },
-              }}
-            >
-              ул. +996 558 999 000
+              +996708197233
             </Typography>
           </Box>
         </Grid>
@@ -225,9 +116,9 @@ const Contact = () => {
           sm={12}
           xs={12}
           height={{
-            xl: "auto",
-            lg: "auto",
-            md: "auto",
+            xl: "500px",
+            lg: "500px",
+            md: "500px",
             sm: "300px",
             xs: "300px",
           }}

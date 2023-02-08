@@ -1,15 +1,16 @@
 import { Box, Grid, Stack, Typography } from "@mui/material"
 import React from "react"
-import rate from "/public/rate.svg"
-import design from "/public/design.svg"
-import trends from "/public/trends.svg"
-import Image from "next/image"
+import SettingsPhoneIcon from "@mui/icons-material/SettingsPhone"
+import ShoppingCartCheckoutIcon from "@mui/icons-material/ShoppingCartCheckout"
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney"
+import ThumbUpIcon from "@mui/icons-material/ThumbUp"
 
 const Advantages = () => {
   return (
     <Box
       sx={{
         paddingBottom: "50px",
+        pt: "50px",
       }}
     >
       <Typography
@@ -27,28 +28,9 @@ const Advantages = () => {
         }}
         variant="h1"
       >
-        Наши особенности
+        Как заказать товар
       </Typography>
-      <Typography
-        sx={{
-          fontSize: "17px",
-          textAlign: "center",
-          maxWidth: "550px",
-          margin: " 0 auto 0 auto",
-          "@media(max-width:768px)": {
-            fontSize: "16px",
-          },
-        }}
-      >
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque,
-        optio error repellendus maiores ea deleniti, ducimus animi blanditiis
-        asperiores labore quas recusandae corrupti dolore? Quia tenetur
-        consectetur ad consequuntur! Autem. Ab facere placeat ratione quam
-        neque. Autem itaque deleniti unde pariatur officiis! Dolorum,
-        voluptatem. Repellendus quas corrupti modi beatae laudantium odit
-        deserunt. Aliquid in voluptate deserunt quas dolore. Quibusdam,
-        voluptatem!
-      </Typography>
+
       <Grid
         container
         spacing={2}
@@ -56,17 +38,12 @@ const Advantages = () => {
           marginTop: "50px",
         }}
       >
-        <Grid item xl={4} lg={4} md={12} sm={12} xs={12}>
+        <Grid item xl={3} lg={3} md={6} sm={12} xs={12}>
           <Stack direction="column" spacing={1} alignItems="center">
             <Box>
-              <Image src={rate} alt="rate" width={70} height={70} />
+              <SettingsPhoneIcon sx={{ fontSize: "60px" }} />
             </Box>
             <Stack>
-              <Typography
-                sx={{ fontWeight: 700, fontSize: "19px", textAlign: "center" }}
-              >
-                Цена
-              </Typography>
               <Typography
                 sx={{
                   fontSize: "16px",
@@ -77,24 +54,19 @@ const Advantages = () => {
                   },
                 }}
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quibusdam ipsam voluptates voluptatibus aut ex saepe quasi vel
-                voluptatem cum maiores labore et magni!
+                Отправляете понравившийся вами товар или отправляете свою модель
+                которую хотели бы отшить. Наши сотрудники в скорейшем времени
+                свяжутся с вами
               </Typography>
             </Stack>
           </Stack>
         </Grid>
-        <Grid item xl={4} lg={4} md={12} sm={12} xs={12}>
+        <Grid item xl={3} lg={3} md={6} sm={12} xs={12}>
           <Stack direction="column" spacing={1} alignItems="center">
             <Box>
-              <Image src={trends} alt="trends" width={70} height={70} />
+              <ShoppingCartCheckoutIcon sx={{ fontSize: "60px" }} />
             </Box>
             <Stack>
-              <Typography
-                sx={{ fontWeight: 700, fontSize: "19px", textAlign: "center" }}
-              >
-                Тренды
-              </Typography>
               <Typography
                 sx={{
                   fontSize: "16px",
@@ -105,24 +77,17 @@ const Advantages = () => {
                   },
                 }}
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quibusdam ipsam voluptates voluptatibus aut ex saepe quasi vel
-                voluptatem cum maiores labore et magni!
+                Мы просчитаем себестоимость вашей модели предложим сроки и цену.
               </Typography>
             </Stack>
           </Stack>
         </Grid>
-        <Grid item xl={4} lg={4} md={12} sm={12} xs={12}>
+        <Grid item xl={3} lg={3} md={6} sm={12} xs={12}>
           <Stack direction="column" spacing={1} alignItems="center">
             <Box>
-              <Image src={design} alt="design" width={70} height={70} />
+              <AttachMoneyIcon sx={{ fontSize: "60px" }} />
             </Box>
             <Stack>
-              <Typography
-                sx={{ fontWeight: 700, fontSize: "19px", textAlign: "center" }}
-              >
-                Высокое качество
-              </Typography>
               <Typography
                 sx={{
                   fontSize: "16px",
@@ -133,9 +98,30 @@ const Advantages = () => {
                   },
                 }}
               >
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quibusdam ipsam voluptates voluptatibus aut ex saepe quasi vel
-                voluptatem cum maiores labore et magni!
+                После обоюдной договоренности вы отправляете отплату 50% от
+                общей суммы заказа и мы запускаем производство
+              </Typography>
+            </Stack>
+          </Stack>
+        </Grid>
+        <Grid item xl={3} lg={3} md={6} sm={12} xs={12}>
+          <Stack direction="column" spacing={1} alignItems="center">
+            <Box>
+              <ThumbUpIcon sx={{ fontSize: "60px" }} />
+            </Box>
+            <Stack>
+              <Typography
+                sx={{
+                  fontSize: "16px",
+                  color: "gray",
+                  textAlign: "center",
+                  "@media(max-width:768px)": {
+                    fontSize: "14px",
+                  },
+                }}
+              >
+                После завершения производства перечисляете оставшиеся 50% и мы
+                отгружаем това в логистическую компанию которая удобно вам.
               </Typography>
             </Stack>
           </Stack>

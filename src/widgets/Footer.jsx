@@ -79,7 +79,7 @@ const Footer = () => {
                 },
               }}
             >
-              LOGO
+              BEGGI
             </Typography>
           </Stack>
         </Grid>
@@ -153,6 +153,49 @@ const Footer = () => {
                   },
                 }}
               >
+                График
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "14px",
+                  "@media(max-width:768px)": {
+                    fontSize: "10px",
+                  },
+                  "@media(max-width:640px)": {
+                    fontSize: "12px",
+                  },
+                }}
+              >
+                Работаем каждый день без выходных
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "14px",
+                  "@media(max-width:768px)": {
+                    fontSize: "10px",
+                  },
+                  "@media(max-width:640px)": {
+                    fontSize: "12px",
+                  },
+                }}
+              >
+                Время с 08:00 - до 17 .00
+              </Typography>
+            </Box>
+            <Box>
+              <Typography
+                sx={{
+                  fontWeight: 700,
+                  fontSize: "14px",
+
+                  "@media(max-width:768px)": {
+                    fontSize: "10px",
+                  },
+                  "@media(max-width:640px)": {
+                    fontSize: "12px",
+                  },
+                }}
+              >
                 Контакты
               </Typography>
               <Typography
@@ -166,20 +209,7 @@ const Footer = () => {
                   },
                 }}
               >
-                + 996 (505) 031222
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: "14px",
-                  "@media(max-width:768px)": {
-                    fontSize: "10px",
-                  },
-                  "@media(max-width:640px)": {
-                    fontSize: "12px",
-                  },
-                }}
-              >
-                + 996 (505) 031222
+                +996708197233
               </Typography>
             </Box>
             <Box>
@@ -210,7 +240,7 @@ const Footer = () => {
                   },
                 }}
               >
-                ул.Киевская 77
+                Кыргызстан, город бишкек
               </Typography>
             </Box>
           </Stack>
@@ -230,12 +260,14 @@ const Footer = () => {
               src={facebook}
               alt="facebook icon"
             />
-            <Image
-              width={35}
-              style={{ cursor: "pointer" }}
-              src={whatsapp}
-              alt="whatsapp icon"
-            />
+            <a href="https://api.whatsapp.com/send/?phone=708197233">
+              <Image
+                width={35}
+                style={{ cursor: "pointer" }}
+                src={whatsapp}
+                alt="whatsapp icon"
+              />
+            </a>
           </Stack>
         </Grid>
       </Grid>

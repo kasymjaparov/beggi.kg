@@ -29,71 +29,41 @@ const Faq = () => {
       </Typography>
       <Accordion sx={{ border: "0px" }}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography sx={{ fontWeight: 600 }}>Подходят ли размеры?</Typography>
+          <Typography sx={{ fontWeight: 600 }}>Где вы находитесь?</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Typography>
+          <Typography>Мы находимся в Кыргызстане город Бишкек.</Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography sx={{ fontWeight: 600 }}>
-            Можно ли купить штучно?
+            Какой у вас способ доставки?
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Typography>
+          <Typography>Самовывоз, транспортной компанией.</Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography sx={{ fontWeight: 600 }}>
-            Какой минимальный объем закупа?
+            Каким способом производить оплату?
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Typography>
+          <Typography>Наличный и безналичный способ оплаты.</Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography sx={{ fontWeight: 600 }}>
-            Какой процесс заказа товаров?
+            Какой у вас объем поставок ?
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography sx={{ fontWeight: 600 }}>
-            Какие условия сотрудничества на индивидуальный пошив?
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <Typography sx={{ fontWeight: 600 }}>
-            Можно ли купить штучно?
-          </Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Крупный опт, мелкий опт. Минимальный заказ от 100шт на модель.
           </Typography>
         </AccordionDetails>
       </Accordion>

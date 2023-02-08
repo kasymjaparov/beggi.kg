@@ -25,7 +25,7 @@ const Header = () => {
       }}
     >
       <Link href="/">
-        <Typography sx={{ color: "#fff" }}>LOGO</Typography>
+        <Typography sx={{ color: "#fff" }}>BEGGI</Typography>
       </Link>
 
       <Box>
