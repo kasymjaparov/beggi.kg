@@ -7,7 +7,6 @@ import {
   Stack,
   Typography,
 } from "@mui/material"
-import Image from "next/image"
 
 const ContactUs = () => {
   return (
