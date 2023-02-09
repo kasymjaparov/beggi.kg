@@ -1,9 +1,11 @@
-import React from "react"
-import { Box, Badge, Stack, Typography } from "@mui/material"
+import React, { useContext } from "react"
+import { Box, Stack, Typography } from "@mui/material"
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"
 import Link from "next/link"
+import { CartContext } from "@/features/Cart/CartContext"
 
 const Header = () => {
+  const { cart } = useContext(CartContext)
   return (
     <Stack
       direction="row"
@@ -30,9 +32,29 @@ const Header = () => {
 
       <Box>
         <Link href="/cart">
-          <Badge badgeContent={4} color="primary">
+          <Box sx={{ position: "relative" }}>
             <ShoppingCartIcon sx={{ color: "#fff" }} />
-          </Badge>
+            {cart.length >= 1 ? (
+              <Box
+                sx={{
+                  padding: "5px",
+                  color: "#fff",
+                  position: "absolute",
+                  right: "-10px",
+                  top: "-10px",
+                  background: "#1976d2",
+                  borderRadius: "50%",
+                  width: "20px",
+                  height: "20px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                {cart.length}
+              </Box>
+            ) : null}
+          </Box>
         </Link>
       </Box>
     </Stack>

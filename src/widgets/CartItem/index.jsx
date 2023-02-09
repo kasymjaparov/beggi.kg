@@ -1,3 +1,4 @@
+import { CartContext } from "@/features/Cart/CartContext"
 import {
   Box,
   OutlinedInput,
@@ -6,21 +7,52 @@ import {
   useMediaQuery,
 } from "@mui/material"
 import Image from "next/image"
-import React from "react"
+import React, { useContext, useEffect, useState } from "react"
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever"
 
 const CartItem = ({ data }) => {
-  const isMobile = useMediaQuery("@media(max-width:650px)")
+  const isMobile = useMediaQuery("@media(max-width:640px)")
+  const { cart, setCart } = useContext(CartContext)
+  const [counter, setCounter] = useState(data.amount)
+  const deleteItem = id => {
+    let newCart = cart
 
+    newCart = newCart.filter(item => {
+      return item.id != id
+    })
+    console.log(newCart)
+
+    setCart(newCart)
+  }
+  useEffect(() => {
+    const newCart = cart
+    newCart.find(i => i.id == data.id).amount = counter
+    setCart(newCart)
+  }, [counter])
   return (
-    <Stack component="li" alignItems="center" spacing={2} direction="row">
+    <Stack component="li" spacing={2} direction="row">
       {isMobile ? null : (
-        <Box sx={{ position: "relative", width: "150px", height: "84px" }}>
-          <Image
-            src={data.image}
-            alt={data.title}
-            fill={true}
-            style={{ objectFit: "cover" }}
-          />
+        <Box sx={{ position: "relative", width: "150px", height: "250px" }}>
+          {data.product_gallery.length >= 1 ? (
+            <Image
+              src={data.product_gallery[0].image}
+              alt={data.name}
+              fill={true}
+              style={{ objectFit: "cover" }}
+            />
+          ) : (
+            <Box
+              sx={{
+                position: "absolute",
+                left: "50%",
+                top: "50%",
+                transform: "translate(-50%,-50%)",
+                textAlign: "center",
+              }}
+            >
+              Картинка отсутствует
+            </Box>
+          )}
         </Box>
       )}
       <Stack
@@ -37,42 +69,32 @@ const CartItem = ({ data }) => {
           <Typography
             component="h3"
             sx={{
-              fontSize: "12px",
-              fontWeight: "600",
-              "@media(max-width:650px)": {
-                fontSize: "10px",
+              fontSize: "17px",
+              fontWeight: "700",
+              "@media(max-width:1020px)": {
+                fontSize: "16px",
               },
-            }}
-          >
-            {data.title}
-          </Typography>
-          <Typography
-            sx={{
-              fontSize: "12px",
-              fontWeight: "600",
-              "@media(max-width:650px)": {
-                fontSize: "10px",
+              "@media(max-width:968px)": {
+                fontSize: "15px",
               },
-            }}
-            component="h4"
-          >
-            {data.subtitle}
-          </Typography>
-          <Typography
-            sx={{
-              fontSize: "16px",
-              fontWeight: "600",
-              "@media(max-width:650px)": {
+              "@media(max-width:768px)": {
+                fontSize: "14px",
+              },
+              "@media(max-width:640px)": {
                 fontSize: "12px",
               },
             }}
-            component="h5"
           >
-            {data.category}
+            {data.name}
           </Typography>
         </Stack>
         <Stack direction="row">
-          <Typography sx={{ cursor: "pointer" }}>-</Typography>
+          <Typography
+            sx={{ cursor: "pointer" }}
+            onClick={() => setCounter(counter - 1)}
+          >
+            -
+          </Typography>
           <OutlinedInput
             type="number"
             sx={{
@@ -82,17 +104,24 @@ const CartItem = ({ data }) => {
               margin: "0 12px",
               "@media(max-width:650px)": {
                 width: "55px",
-                fontSize: "8px",
+                fontSize: "10px",
               },
             }}
-            value={data.amount}
+            error={counter <= 0}
+            value={counter}
+            onChange={e => setCounter(Number(e.target.value))}
             inputProps={{
               style: {
-                padding: "2px 24px",
+                padding: "2px 14px",
               },
             }}
           />
-          <Typography sx={{ cursor: "pointer" }}>+</Typography>
+          <Typography
+            sx={{ cursor: "pointer" }}
+            onClick={() => setCounter(counter + 1)}
+          >
+            +
+          </Typography>
         </Stack>
 
         <Typography
@@ -106,9 +135,12 @@ const CartItem = ({ data }) => {
         >
           {data.price} сом
         </Typography>
+        <DeleteForeverIcon
+          onClick={() => deleteItem(data.id)}
+          sx={{ color: "red", cursor: "pointer" }}
+        />
       </Stack>
     </Stack>
   )
 }
-
 export default CartItem

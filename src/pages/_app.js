@@ -1,5 +1,9 @@
+import { CartContext } from "@/features/Cart/CartContext"
 import "@/styles/globals.css"
 import { createTheme, ThemeProvider } from "@mui/material/styles"
+import { useMemo, useState } from "react"
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 
 const theme = createTheme({
   breakpoints: {
@@ -27,9 +31,41 @@ const theme = createTheme({
   },
 })
 export default function App({ Component, pageProps }) {
+  const useLocalStorage = (key, initialValue) => {
+    const [storedValue, setStoredValue] = useState(() => {
+      try {
+        const item =
+          typeof window !== "undefined"
+            ? window.localStorage.getItem(key)
+            : null
+        return item ? JSON.parse(item) : initialValue
+      } catch (error) {
+        return initialValue
+      }
+    })
+
+    const setValue = value => {
+      try {
+        const valueToStore =
+          value instanceof Function ? value(storedValue) : value
+        setStoredValue(valueToStore)
+        window.localStorage.setItem(key, JSON.stringify(valueToStore))
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    return [storedValue, setValue]
+  }
+  const [cart, setCart] = useLocalStorage("cart", [])
+
+  const value = useMemo(() => ({ cart, setCart }), [cart, setCart])
+
   return (
-    <ThemeProvider theme={theme}>
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <CartContext.Provider value={value}>
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+        <ToastContainer />
+      </ThemeProvider>
+    </CartContext.Provider>
   )
 }

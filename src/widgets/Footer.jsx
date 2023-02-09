@@ -248,12 +248,15 @@ const Footer = () => {
 
         <Grid item lg={3} md={3} sm={12} xs={12}>
           <Stack direction="row" spacing={1} justifyContent="center">
-            <Image
-              width={35}
-              style={{ cursor: "pointer" }}
-              src={instagram}
-              alt="instagram icon"
-            />
+            <a href="http://instagram.com/_u/beggibrand_kg/">
+              <Image
+                width={35}
+                style={{ cursor: "pointer" }}
+                src={instagram}
+                alt="instagram icon"
+              />
+            </a>
+
             <Image
               width={35}
               style={{ cursor: "pointer" }}

@@ -5,40 +5,58 @@ import {
   Stack,
   Typography,
   useMediaQuery,
+  FormControl,
+  OutlinedInput,
+  Button,
 } from "@mui/material"
 import React, { useState } from "react"
 import FilterAltIcon from "@mui/icons-material/FilterAlt"
+import { useRouter } from "next/router"
 
 const Filter = () => {
   const mobile = useMediaQuery("(max-width:768px)")
+  const router = useRouter()
   const [showFilter, setShowFilter] = useState(false)
   const [filter, setFilter] = React.useState({
-    exist: true,
-    kardigan: true,
-    dvoika: true,
-    troika: true,
-    switshot: true,
-    tuniki: true,
-    razmer1: true,
-    razmer2: true,
+    in_stock: router.query.in_stock
+      ? router.query.in_stock == 1
+        ? true
+        : false
+      : true,
+    price_from: router.query.price_from || "",
+    price_to: router.query.price_to || "",
   })
-  const {
-    exist,
-    kardigan,
-    dvoika,
-    troika,
-    switshot,
-    tuniki,
-    razmer1,
-    razmer2,
-  } = filter
   const handleChange = event => {
-    setFilter({
-      ...filter,
-      [event.target.name]: event.target.checked,
+    if (event.target.name == "price_from" || event.target.name == "price_to") {
+      setFilter({
+        ...filter,
+        [event.target.name]: event.target.value,
+      })
+    } else {
+      setFilter({
+        ...filter,
+        [event.target.name]: event.target.checked,
+      })
+      router.push({
+        pathname: router.pathname,
+        query: {
+          in_stock: filter.in_stock ? 0 : 1,
+          price_from: filter.price_from,
+          price_to: filter.price_to,
+        },
+      })
+    }
+  }
+  const priceClick = () => {
+    router.push({
+      pathname: router.pathname,
+      query: {
+        in_stock: filter.in_stock ? 0 : 1,
+        price_from: filter.price_from,
+        price_to: filter.price_to,
+      },
     })
   }
-  console.log(filter)
   return (
     <Box>
       {mobile ? (
@@ -59,106 +77,56 @@ const Filter = () => {
             <FormControlLabel
               control={
                 <Checkbox
-                  checked={exist}
+                  checked={filter.in_stock}
                   onChange={handleChange}
-                  name="exist"
+                  name="in_stock"
                   color="default"
                 />
               }
-              label="Только товары в наличии"
+              label="Товары в наличии"
             />
           </Stack>
+
           <Stack>
-            <Typography sx={{ fontWeight: 700 }}>Категория</Typography>
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={kardigan}
-                  onChange={handleChange}
-                  name="kardigan"
-                  color="default"
-                />
-              }
-              label="Кардиганы"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={dvoika}
-                  onChange={handleChange}
-                  name="dvoika"
-                  color="default"
-                />
-              }
-              label="Костюмы двойка"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={troika}
-                  onChange={handleChange}
-                  name="troika"
-                  color="default"
-                />
-              }
-              label="Костюмы тройка"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={switshot}
-                  onChange={handleChange}
-                  name="switshot"
-                  color="default"
-                />
-              }
-              label="Свитшоты"
-            />
-            <FormControlLabel
-              control={
-                <Checkbox
-                  checked={tuniki}
-                  onChange={handleChange}
-                  name="tuniki"
-                  color="default"
-                />
-              }
-              label="Туники"
-            />
-          </Stack>
-          <Stack>
-            <Typography sx={{ fontWeight: 700 }}>Размеры</Typography>
+            <Typography sx={{ fontWeight: 700, mb: "10px" }}>Цена</Typography>
             <Stack
               direction={{
                 xl: "column",
                 lg: "column",
-                md: "column",
+                md: "row",
                 sm: "row",
                 xs: "row",
               }}
+              component="form"
+              onSubmit={e => {
+                e.preventDefault()
+                priceClick()
+              }}
+              spacing={2}
             >
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={razmer1}
-                    onChange={handleChange}
-                    name="razmer1"
-                    color="default"
-                  />
-                }
-                label="48/50/52/54"
-              />
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={razmer2}
-                    onChange={handleChange}
-                    name="razmer2"
-                    color="default"
-                  />
-                }
-                label="52/54/56"
-              />
+              <FormControl>
+                <OutlinedInput
+                  value={filter.price_from}
+                  name="price_from"
+                  type="number"
+                  onChange={handleChange}
+                  size="small"
+                  placeholder="От"
+                />
+              </FormControl>
+              <FormControl>
+                <OutlinedInput
+                  value={filter.price_to}
+                  name="price_to"
+                  onChange={handleChange}
+                  size="small"
+                  placeholder="До"
+                  type="number"
+                />
+              </FormControl>
+              <Button variant="contained" type="submit">
+                Поиск
+              </Button>
             </Stack>
           </Stack>
         </Stack>

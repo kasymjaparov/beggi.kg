@@ -89,3 +89,6 @@ input[type="number"] {
   width: 120%;
   overflow-x: hidden;
 }
+.custom-table-pagination {
+  margin: 30px auto 0px auto;
+}

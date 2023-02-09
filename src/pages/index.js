@@ -1,3 +1,4 @@
+import endpoints from "@/api"
 import AboutUs from "@/features/Main/AboutUs"
 import Advantages from "@/features/Main/Advantages"
 import Banner from "@/features/Main/Banner"
@@ -8,7 +9,7 @@ import Faq from "@/features/Main/Faq"
 import MainLayout from "@/layouts/MainLayout"
 import { Box } from "@mui/material"
 
-export default function Home() {
+export default function Home({ list }) {
   return (
     <MainLayout title="Главная">
       <Banner />
@@ -26,7 +27,7 @@ export default function Home() {
           },
         }}
       >
-        <Catalog />
+        <Catalog list={list} />
         <Advantages />
         <Faq />
       </Box>
@@ -50,4 +51,9 @@ export default function Home() {
       </Box>
     </MainLayout>
   )
+}
+export async function getServerSideProps(context) {
+  const res = await fetch(endpoints.products(context.query))
+  const list = await res.json()
+  return { props: { list } }
 }
