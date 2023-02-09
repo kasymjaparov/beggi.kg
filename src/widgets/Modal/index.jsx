@@ -27,7 +27,10 @@ const Modal = ({ open, handleClose, input }) => {
         body: requestBody,
       })
       const json = await res.json()
-    } catch (error) {}
+    } catch (error) {
+    } finally {
+      handleClose()
+    }
   }
   return (
     <Dialog open={open} onClose={handleClose}>

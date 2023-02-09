@@ -44,7 +44,7 @@ const Item = ({ data }) => {
       </Box>
       <Stack sx={{ cursor: "pointer", my: "10px" }} alignItems="center">
         <Typography sx={{ fontWeight: 700 }}>{data.name}</Typography>
-        <Typography>{data.price}</Typography>
+        <Typography>{data.price} сом</Typography>
       </Stack>
       <Stack>
         <Button

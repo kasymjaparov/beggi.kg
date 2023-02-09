@@ -65,29 +65,28 @@ const CartItem = ({ data }) => {
           width: "100%",
         }}
       >
-        <Stack spacing={1}>
-          <Typography
-            component="h3"
-            sx={{
-              fontSize: "17px",
-              fontWeight: "700",
-              "@media(max-width:1020px)": {
-                fontSize: "16px",
-              },
-              "@media(max-width:968px)": {
-                fontSize: "15px",
-              },
-              "@media(max-width:768px)": {
-                fontSize: "14px",
-              },
-              "@media(max-width:640px)": {
-                fontSize: "12px",
-              },
-            }}
-          >
-            {data.name}
-          </Typography>
-        </Stack>
+        <Typography
+          component="h3"
+          sx={{
+            width: "100px",
+            fontSize: "17px",
+            fontWeight: "700",
+            "@media(max-width:1020px)": {
+              fontSize: "16px",
+            },
+            "@media(max-width:968px)": {
+              fontSize: "15px",
+            },
+            "@media(max-width:768px)": {
+              fontSize: "14px",
+            },
+            "@media(max-width:640px)": {
+              fontSize: "12px",
+            },
+          }}
+        >
+          {data.name}
+        </Typography>
         <Stack direction="row">
           <Typography
             sx={{ cursor: "pointer" }}

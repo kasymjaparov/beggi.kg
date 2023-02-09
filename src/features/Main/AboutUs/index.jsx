@@ -15,14 +15,14 @@ const AboutUs = () => {
         paddingX: "80px",
         mb: "16px",
 
-        "@media(max-width:1200px )": {
+        "@media(max-width:1200px)": {
           paddingX: "70px",
         },
-        "@media(max-width:768px )": {
+        "@media(max-width:768px)": {
           paddingX: "50px",
         },
-        "@media(max-width:640px )": {
-          paddingX: "30px",
+        "@media(max-width:640px)": {
+          padding: "10px 30px 0 30px",
         },
       }}
     >
@@ -38,6 +38,9 @@ const AboutUs = () => {
               },
               "@media(max-width:768px)": {
                 fontSize: "20px",
+              },
+              "@media(max-width:640px)": {
+                fontSize: "18px",
               },
             }}
             variant="h1"
@@ -66,23 +69,42 @@ const AboutUs = () => {
                   "@media(max-width:768px)": {
                     fontSize: "20px",
                   },
+                  "@media(max-width:640px)": {
+                    fontSize: "18px",
+                  },
                 }}
               >
                 Для крупного опта
               </Typography>
-              <Box
-                sx={{
-                  "& *": {
+              <Box>
+                <Typography
+                  sx={{
                     fontSize: "16px",
                     "@media(max-width:768px)": {
                       fontSize: "14px",
                     },
-                  },
-                }}
-              >
-                <Typography>-Специальные цены на крупный опт</Typography>
-                <Typography>-Возможность брендирования</Typography>
-                <Typography>
+                  }}
+                >
+                  -Специальные цены на крупный опт
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: "16px",
+                    "@media(max-width:768px)": {
+                      fontSize: "14px",
+                    },
+                  }}
+                >
+                  -Возможность брендирования
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: "16px",
+                    "@media(max-width:768px)": {
+                      fontSize: "14px",
+                    },
+                  }}
+                >
                   -Производство моделей под заказ от 300шт (5 рулонов)
                 </Typography>
               </Box>
@@ -98,30 +120,54 @@ const AboutUs = () => {
                   "@media(max-width:768px)": {
                     fontSize: "20px",
                   },
+                  "@media(max-width:640px)": {
+                    fontSize: "18px",
+                  },
                 }}
               >
                 Для маркетплейсов
               </Typography>
-              <Box
-                sx={{
-                  "& *": {
+              <Box>
+                <Typography
+                  sx={{
                     fontSize: "16px",
                     "@media(max-width:768px)": {
                       fontSize: "14px",
                     },
-                  },
-                }}
-              >
-                <Typography>
+                  }}
+                >
                   -Возможность брендирования и упаковки по вашему тз
                 </Typography>
-                <Typography>
+                <Typography
+                  sx={{
+                    fontSize: "16px",
+                    "@media(max-width:768px)": {
+                      fontSize: "14px",
+                    },
+                  }}
+                >
                   -Возможность повтора модели в ваших расцветках
                 </Typography>
-                <Typography>
+                <Typography
+                  sx={{
+                    fontSize: "16px",
+                    "@media(max-width:768px)": {
+                      fontSize: "14px",
+                    },
+                  }}
+                >
                   -Хранениев архиве ваших образцов на случай повтора
                 </Typography>
-                <Typography>-Спец. цены в зависимости от объема</Typography>
+                <Typography
+                  sx={{
+                    fontSize: "16px",
+                    "@media(max-width:768px)": {
+                      fontSize: "14px",
+                    },
+                  }}
+                >
+                  -Спец. цены в зависимости от объема
+                </Typography>
               </Box>
             </Box>
           </Box>
