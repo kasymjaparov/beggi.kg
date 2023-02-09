@@ -1,5 +1,6 @@
 import endpoints from "@/api"
 import { CartContext } from "@/features/Cart/CartContext"
+import { toastError, toastSuccess } from "@/toast"
 import { Box, Button, Dialog, Stack, Typography } from "@mui/material"
 import React, { useContext } from "react"
 
@@ -27,7 +28,9 @@ const Modal = ({ open, handleClose, input }) => {
         body: requestBody,
       })
       const json = await res.json()
+      toastSuccess("Вы успешно отправили заявку на покупку.")
     } catch (error) {
+      toastError("Произошла ошибка при отправке заявки. Повторите позже.")
     } finally {
       handleClose()
     }
