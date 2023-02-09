@@ -6,7 +6,7 @@ const endpoints = {
       in_stock: filter.in_stock || 1,
       price_from: filter.price_from ? filter.price_from : "",
       price_to: filter.price_to ? filter.price_to : "",
-      page: filter.page ? filter.page : "",
+      page: filter.page ? filter.page : "1",
     }
     return (
       rootApi +
