@@ -202,7 +202,17 @@ export default function ProductDetail({ productDetail, list, hostname }) {
                 </Typography>
               </Stack>
             </Stack>
-            <Stack direction="row" sx={{ mt: "20px" }}>
+            <Stack
+              direction="row"
+              sx={{ mt: "20px" }}
+              justifyContent={{
+                xl: "flex-start",
+                lg: "flex-start",
+                md: "flex-start",
+                sm: "center",
+                xs: "center",
+              }}
+            >
               <Typography
                 sx={{ cursor: "pointer" }}
                 onClick={() => setCounter(counter - 1)}
@@ -218,7 +228,7 @@ export default function ProductDetail({ productDetail, list, hostname }) {
                   margin: "0 12px",
                   "@media(max-width:650px)": {
                     width: "55px",
-                    fontSize: "10px",
+                    fontSize: "12px",
                   },
                 }}
                 error={counter <= 0}
@@ -240,7 +250,20 @@ export default function ProductDetail({ productDetail, list, hostname }) {
             <Button onClick={addToCart} variant="contained" sx={{ mt: "16px" }}>
               Добавить в корзину
             </Button>
-            <Stack direction="row" spacing={2} mt={"20px"}>
+            <Typography sx={{ fontWeight: 700, mt: "20px", mb: "8px" }}>
+              Поделиться в:
+            </Typography>
+            <Stack
+              direction="row"
+              spacing={2}
+              justifyContent={{
+                xl: "flex-start",
+                lg: "flex-start",
+                md: "flex-start",
+                sm: "center",
+                xs: "center",
+              }}
+            >
               {shareLinks.map(link => {
                 return (
                   <Box

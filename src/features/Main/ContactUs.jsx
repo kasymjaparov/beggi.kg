@@ -33,7 +33,7 @@ const ContactUs = () => {
       }
     } catch (error) {
     } finally {
-      toastSuccess("Спасибо. Мы обяазтельно свяжемся с вами.")
+      toastSuccess("Спасибо. Мы обязательно свяжемся с вами.")
     }
   }
   return (
