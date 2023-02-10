@@ -12,6 +12,8 @@ const Advantages = () => {
       sx={{
         paddingBottom: "50px",
         pt: "50px",
+        maxWidth: "1000px",
+        margin: "0 auto 0 auto",
       }}
     >
       <Typography

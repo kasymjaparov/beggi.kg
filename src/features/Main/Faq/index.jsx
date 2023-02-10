@@ -10,7 +10,10 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
 
 const Faq = () => {
   return (
-    <Box id="faq" sx={{ pb: "50px" }}>
+    <Box
+      id="faq"
+      sx={{ pb: "50px", maxWidth: "1000px", margin: "0 auto 0 auto" }}
+    >
       <Typography
         sx={{
           fontSize: "25px",
@@ -21,6 +24,10 @@ const Faq = () => {
           },
           "@media(max-width:768px)": {
             fontSize: "20px",
+          },
+          "@media(max-width:640px)": {
+            textAlign: "center",
+            fontSize: "18px",
           },
         }}
         variant="h1"

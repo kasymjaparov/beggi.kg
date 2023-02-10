@@ -37,22 +37,16 @@ const Contact = () => {
             variant="h1"
             sx={{
               fontWeight: 700,
-              mb: "26px",
-              fontSize: "28px",
-              "@media(max-width:1020px)": {
-                fontSize: "24px",
-                mb: "26px",
-              },
+              mb: "16px",
+              fontSize: "25px",
               "@media(max-width:968px)": {
-                mb: "20px",
-                fontSize: "20px",
+                fontSize: "23px",
               },
               "@media(max-width:768px)": {
                 fontSize: "20px",
-                mb: "17px",
               },
               "@media(max-width:640px)": {
-                fontSize: "17px",
+                fontSize: "18px",
               },
             }}
           >
@@ -62,20 +56,20 @@ const Contact = () => {
             variant="h2"
             sx={{
               mb: "17px",
-              fontSize: "16px",
+              fontSize: "18px",
               "@media(max-width:1020px)": {
-                fontSize: "14px",
+                fontSize: "16px",
                 mb: "13px",
               },
               "@media(max-width:968px)": {
                 mb: "13px",
-                fontSize: "13px",
+                fontSize: "14px",
               },
               "@media(max-width:768px)": {
-                mb: "13px",
+                mb: "14px",
               },
               "@media(max-width:640px)": {
-                fontSize: "12px",
+                fontSize: "14px",
               },
             }}
           >
@@ -83,7 +77,22 @@ const Contact = () => {
           </Typography>
 
           <Box component="address" sx={{ mb: "13px" }}>
-            <Typography sx={{ fontWeight: 700, mb: "8px" }}>
+            <Typography
+              sx={{
+                fontWeight: 700,
+                mb: "8px",
+                fontSize: "25px",
+                "@media(max-width:968px)": {
+                  fontSize: "23px",
+                },
+                "@media(max-width:768px)": {
+                  fontSize: "20px",
+                },
+                "@media(max-width:640px)": {
+                  fontSize: "18px",
+                },
+              }}
+            >
               Контакты
             </Typography>
             <Typography

@@ -23,7 +23,7 @@ const Banner = () => {
             Новое поступление
           </Box>
           <Typography component="h1" sx={{ fontSize: "50px", mt: "30px" }}>
-            Новая зимняя коллекция
+            Новая весенняя коллекция
           </Typography>
           <Typography
             component="h2"

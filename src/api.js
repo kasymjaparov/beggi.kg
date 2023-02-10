@@ -1,4 +1,4 @@
-const rootApi = "http://167.71.238.139"
+const rootApi = process.env.NEXT_PUBLIC_API_ROOT
 
 const endpoints = {
   products: filter => {
