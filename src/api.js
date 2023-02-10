@@ -1,4 +1,4 @@
-const rootApi = process.env.NEXT_PUBLIC_API_ROOT
+const rootApi = 'https://beggi.kg'
 
 const endpoints = {
   products: filter => {
