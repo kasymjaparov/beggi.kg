@@ -21,7 +21,6 @@ const Modal = ({ open, handleClose, input }) => {
       })
       const res = await fetch(endpoints.orders, {
         method: "POST",
-        referrerPolicy: "unsafe_url",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",

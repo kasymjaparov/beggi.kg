@@ -7,6 +7,9 @@ const endpoints = {
       price_from: filter.price_from ? filter.price_from : "",
       price_to: filter.price_to ? filter.price_to : "",
       page: filter.page ? filter.page : "1",
+      per_page: filter.per_page ? filter.per_page : 10,
+      category: filter.category ? filter.category : "",
+      sub_category: filter.sub_category || "",
     }
     return (
       rootApi +
@@ -15,12 +18,17 @@ const endpoints = {
         in_stock: newFilter.in_stock,
         price_from: newFilter.price_from,
         price_to: newFilter.price_to,
-        per_page: 10,
+        per_page: newFilter.per_page,
+        category__name: newFilter.category,
+        sub_category_filter: newFilter.sub_category,
       })}`
     )
   },
+  productDetail: id => rootApi + "/product/" + id,
   orders: rootApi + "/order/",
   category: rootApi + "/category/",
-  sub_category: rootApi + "/sub_category/",
+  contact: rootApi + "/contact/",
+  sub_category: category =>
+    rootApi + `/sub_category/?category__name=${category}`,
 }
 export default endpoints

@@ -4,9 +4,11 @@ import Image from "next/image"
 import { CartContext } from "@/features/Cart/CartContext"
 import { useContext } from "react"
 import { toastInfo, toastSuccess } from "@/toast"
+import { useRouter } from "next/router"
 
 const Item = ({ data }) => {
   const { cart, setCart } = useContext(CartContext)
+  const router = useRouter()
   const addToCart = () => {
     if (cart.find(item => item.id == data.id)) {
       toastInfo("Товар уже есть в корзине")
@@ -42,7 +44,12 @@ const Item = ({ data }) => {
           </Box>
         )}
       </Box>
-      <Stack sx={{ cursor: "pointer", my: "10px" }} alignItems="center">
+
+      <Stack
+        sx={{ cursor: "pointer", my: "10px" }}
+        onClick={() => router.push({ pathname: "/" + data.id })}
+        alignItems="center"
+      >
         <Typography sx={{ fontWeight: 700 }}>{data.name}</Typography>
         <Typography>{data.price} сом</Typography>
       </Stack>

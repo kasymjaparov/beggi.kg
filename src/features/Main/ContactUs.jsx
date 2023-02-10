@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import {
   Box,
   Button,
@@ -7,8 +7,35 @@ import {
   Stack,
   Typography,
 } from "@mui/material"
+import { toastError, toastSuccess } from "@/toast"
+import endpoints from "@/api"
 
 const ContactUs = () => {
+  const [form, setForm] = useState({ phone: "", message: "" })
+  const handleChange = e => {
+    setForm({ ...form, [e.target.name]: e.target.value })
+  }
+  const click = async e => {
+    try {
+      e.preventDefault()
+      if (!form.phone || !form.message) {
+        toastError("Заполните все поля")
+      } else {
+        const res = await fetch(endpoints.contact, {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(form),
+        })
+        setForm({ phone: "", message: "" })
+      }
+    } catch (error) {
+    } finally {
+      toastSuccess("Спасибо. Мы обяазтельно свяжемся с вами.")
+    }
+  }
   return (
     <Box sx={{}}>
       <Typography
@@ -44,11 +71,16 @@ const ContactUs = () => {
             py: "20px",
           },
         }}
+        onSubmit={click}
       >
         <FormControl sx={{}}>
           <OutlinedInput
             placeholder="+996 (000) 000 000"
             size="small"
+            name="phone"
+            type="number"
+            value={form.phone}
+            onChange={handleChange}
             sx={{
               background: "#FFFFFF",
               borderRadius: "9px",
@@ -65,6 +97,9 @@ const ContactUs = () => {
           <OutlinedInput
             placeholder="Сообщение"
             size="small"
+            name="message"
+            value={form.message}
+            onChange={handleChange}
             sx={{
               background: "#FFFFFF",
               borderRadius: "9px",
@@ -81,6 +116,7 @@ const ContactUs = () => {
           sx={{
             mb: "1px",
           }}
+          type="submit"
         >
           Отправить
         </Button>

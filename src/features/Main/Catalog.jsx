@@ -31,7 +31,7 @@ const Catalog = ({ list }) => {
         </Grid>
         <Grid item xl={9} lg={9} md={12} sm={12} xs={12}>
           <Grid container spacing={2}>
-            {list.results ? (
+            {list.results.length >= 1 ? (
               list.results.map((item, index) => {
                 return (
                   <Grid key={index} item xl={3} lg={3} md={4} sm={6} xs={12}>
@@ -40,7 +40,7 @@ const Catalog = ({ list }) => {
                 )
               })
             ) : (
-              <Box>Товары отсутствуют</Box>
+              <Box sx={{ mt: "20px", fontWeight: 700 }}>Товары отсутствуют</Box>
             )}
           </Grid>
         </Grid>

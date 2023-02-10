@@ -16,12 +16,9 @@ const CartItem = ({ data }) => {
   const [counter, setCounter] = useState(data.amount)
   const deleteItem = id => {
     let newCart = cart
-
     newCart = newCart.filter(item => {
       return item.id != id
     })
-    console.log(newCart)
-
     setCart(newCart)
   }
   useEffect(() => {
