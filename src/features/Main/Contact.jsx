@@ -4,6 +4,7 @@ import React from "react"
 const Contact = () => {
   return (
     <Box
+      id="contact"
       sx={{
         paddingY: "70px",
         "@media(max-width:640px)": {

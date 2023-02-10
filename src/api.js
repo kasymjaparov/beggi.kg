@@ -11,6 +11,18 @@ const endpoints = {
       category: filter.category ? filter.category : "",
       sub_category: filter.sub_category || "",
     }
+    console.log(
+      rootApi +
+        `/product/?${new URLSearchParams({
+          page: newFilter.page,
+          in_stock: newFilter.in_stock,
+          price_from: newFilter.price_from,
+          price_to: newFilter.price_to,
+          per_page: newFilter.per_page,
+          category__name: newFilter.category,
+          sub_category_filter: newFilter.sub_category,
+        })}`
+    )
     return (
       rootApi +
       `/product/?${new URLSearchParams({

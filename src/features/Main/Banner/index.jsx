@@ -35,21 +35,23 @@ const Banner = () => {
             fugiat neque aspernatur tempore nam aliquam aliquid ab officiis quas
             quisquam praesentium officia!
           </Typography>
-          <Button
-            variant="contained"
-            sx={{
-              background: "#c2a942",
-              color: "#fff",
-              boxShadow: "0px",
-              "&:hover": {
+          <a href="#catalog">
+            <Button
+              variant="contained"
+              sx={{
                 background: "#c2a942",
                 color: "#fff",
                 boxShadow: "0px",
-              },
-            }}
-          >
-            Посмотреть
-          </Button>
+                "&:hover": {
+                  background: "#c2a942",
+                  color: "#fff",
+                  boxShadow: "0px",
+                },
+              }}
+            >
+              Посмотреть
+            </Button>
+          </a>
         </Grid>
         <Grid item xl={6} lg={8} md={0} sm={0} xs={0}>
           <div className="bannerImage"></div>

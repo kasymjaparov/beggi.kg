@@ -4,14 +4,14 @@ import Image from "next/image"
 import Link from "next/link"
 import whatsapp from "/public/whatsapp.svg"
 import instagram from "/public/instagram.svg"
-import facebook from "/public/facebook.svg"
 
 const Footer = () => {
   const navLinks = [
-    { text: "О компании", href: "/" },
-    { text: "Возможности", href: "/" },
-    { text: "Каталог", href: "/" },
-    { text: "Контакты", href: "/" },
+    { text: "Каталог", href: "#catalog" },
+    { text: "О компании", href: "#about" },
+    { text: "FAQ", href: "#faq" },
+    { text: "Как заказать", href: "#advantages" },
+    { text: "Контакты", href: "#contact" },
   ]
 
   return (
@@ -256,13 +256,6 @@ const Footer = () => {
                 alt="instagram icon"
               />
             </a>
-
-            <Image
-              width={35}
-              style={{ cursor: "pointer" }}
-              src={facebook}
-              alt="facebook icon"
-            />
             <a href="https://api.whatsapp.com/send/?phone=708197233">
               <Image
                 width={35}

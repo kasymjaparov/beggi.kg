@@ -8,6 +8,7 @@ import ThumbUpIcon from "@mui/icons-material/ThumbUp"
 const Advantages = () => {
   return (
     <Box
+      id="advantages"
       sx={{
         paddingBottom: "50px",
         pt: "50px",

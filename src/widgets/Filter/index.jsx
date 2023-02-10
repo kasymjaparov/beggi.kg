@@ -52,7 +52,7 @@ const Filter = () => {
           price_from: filter.price_from,
           price_to: filter.price_to,
           category: event.target.value,
-          sub_category: event.target.value,
+          sub_category: filter.sub_category,
         },
       })
     } else if (event.target.name == "sub_category") {

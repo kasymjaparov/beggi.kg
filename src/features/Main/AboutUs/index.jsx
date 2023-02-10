@@ -6,6 +6,7 @@ import image from "/public/example_aboutus.jpg"
 const AboutUs = () => {
   return (
     <Grid
+      id="about"
       container
       alignItems="center"
       spacing={2}

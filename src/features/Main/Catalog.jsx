@@ -21,6 +21,7 @@ const Catalog = ({ list }) => {
 
   return (
     <Box
+      id="catalog"
       sx={{
         my: "50px",
       }}
