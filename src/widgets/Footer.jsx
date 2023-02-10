@@ -114,9 +114,7 @@ const Footer = () => {
                       "@media(max-width:768px)": {
                         fontSize: "10px",
                       },
-                      "@media(max-width:640px)": {
-                        fontSize: "12px",
-                      },
+                      
                     }}
                   >
                     {navLink.text}
