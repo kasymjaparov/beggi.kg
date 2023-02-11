@@ -19,7 +19,16 @@ const Item = ({ data }) => {
   }
   return (
     <Box>
-      <Box sx={{ position: "relative", width: "100%", height: "280px" }}>
+      <Box
+        sx={{
+          position: "relative",
+          width: "100%",
+          height: "280px",
+          "@media(max-width:640px)": {
+            height: "400px",
+          },
+        }}
+      >
         {data.product_gallery.length >= 1 ? (
           <Image
             fill={true}
@@ -40,6 +49,9 @@ const Item = ({ data }) => {
               margin: "0 auto 0 auto",
               textAlign: "center",
               background: "#f3f1e6",
+              "@media(max-width:640px)": {
+                height: "400px",
+              },
             }}
           >
             Картинка отсутствует

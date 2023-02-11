@@ -67,6 +67,11 @@ const Footer = () => {
                   marginTop: "5px",
                 },
               },
+              "@media(max-width:768px)": {
+               "& h5": {
+                marginLeft: "0px",
+              },
+              },
             }}
           >
             <Typography
