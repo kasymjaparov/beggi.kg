@@ -83,23 +83,15 @@ const Footer = () => {
             </Typography>
           </Stack>
         </Grid>
-        <Grid
-          item
-          lg={3}
-          md={3}
-          sm={12}
-          xs={12}
-          sx={{
-            "@media(max-width:640px )": {
-              display: "none",
-            },
-          }}
-        >
+        <Grid item lg={3} md={3} sm={12} xs={12}>
           <Stack
             component="nav"
             sx={{
               "& a": {
                 color: "white",
+              },
+              "@media(max-width:640px)": {
+                textAlign: "center",
               },
             }}
             spacing={1}
@@ -114,7 +106,9 @@ const Footer = () => {
                       "@media(max-width:768px)": {
                         fontSize: "10px",
                       },
-                      
+                      "@media(max-width:640px)": {
+                        fontSize: "12px",
+                      },
                     }}
                   >
                     {navLink.text}
@@ -229,7 +223,6 @@ const Footer = () => {
               <Typography
                 sx={{
                   fontSize: "14px",
-
                   "@media(max-width:768px)": {
                     fontSize: "10px",
                   },

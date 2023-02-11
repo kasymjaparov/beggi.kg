@@ -17,7 +17,6 @@ const Item = ({ data }) => {
       toastSuccess("Товар добавлен в корзину")
     }
   }
-
   return (
     <Box>
       <Box sx={{ position: "relative", width: "100%", height: "280px" }}>
@@ -27,17 +26,20 @@ const Item = ({ data }) => {
             src={data.product_gallery[0].image}
             alt="image"
             style={{
-              objectFit: "contain",
+              objectFit: "cover",
             }}
           />
         ) : (
           <Box
             sx={{
-              position: "absolute",
-              left: "50%",
-              top: "50%",
-              transform: "translate(-50%,-50%)",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              height: "280px",
+              width: "100%",
+              margin: "0 auto 0 auto",
               textAlign: "center",
+              background: "#f3f1e6",
             }}
           >
             Картинка отсутствует
@@ -46,22 +48,28 @@ const Item = ({ data }) => {
       </Box>
 
       <Stack
-        sx={{ cursor: "pointer", my: "10px" }}
+        sx={{ cursor: "pointer", my: "0px" }}
         onClick={() => router.push({ pathname: "/" + data.id })}
         alignItems="center"
       >
         <Typography sx={{ fontWeight: 700 }}>{data.name}</Typography>
         <Typography>{data.price} сом</Typography>
       </Stack>
-      <Stack>
-        <Button
-          onClick={() => addToCart()}
-          sx={{ width: "80%", margin: "0 auto 0 auto" }}
-          variant="contained"
-        >
-          Добавить в корзину
-        </Button>
-      </Stack>
+      {data.in_stock ? (
+        <Stack>
+          <Button
+            onClick={() => addToCart()}
+            sx={{ width: "80%", margin: "0 auto 0 auto" }}
+            variant="contained"
+          >
+            Добавить в корзину
+          </Button>
+        </Stack>
+      ) : (
+        <Typography sx={{ textAlign: "center", color: "gray" }}>
+          Нет в наличие
+        </Typography>
+      )}
     </Box>
   )
 }

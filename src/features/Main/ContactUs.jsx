@@ -78,7 +78,7 @@ const ContactUs = () => {
             placeholder="+996 (000) 000 000"
             size="small"
             name="phone"
-            type="number"
+            type="phone"
             value={form.phone}
             onChange={handleChange}
             sx={{

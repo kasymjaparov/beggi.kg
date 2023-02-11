@@ -27,7 +27,6 @@ const Modal = ({ open, handleClose, input }) => {
         },
         body: requestBody,
       })
-      const json = await res.json()
       toastSuccess("Вы успешно отправили заявку на покупку.")
     } catch (error) {
       toastError("Произошла ошибка при отправке заявки. Повторите позже.")

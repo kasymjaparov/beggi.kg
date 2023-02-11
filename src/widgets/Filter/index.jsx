@@ -156,7 +156,7 @@ const Filter = () => {
                   onChange={handleChange}
                   size="small"
                 >
-                  <MenuItem value={""}>-</MenuItem>
+                  <MenuItem value={""}>Все</MenuItem>
                   {category.map((selectObj, index) => (
                     <MenuItem key={index} value={selectObj.name}>
                       {selectObj.name}
@@ -177,7 +177,7 @@ const Filter = () => {
                   onChange={handleChange}
                   size="small"
                 >
-                  <MenuItem value={""}>-</MenuItem>
+                  <MenuItem value={""}>Все</MenuItem>
                   {sub_category.map((selectObj, index) => (
                     <MenuItem key={index} value={selectObj.id}>
                       {selectObj.name}

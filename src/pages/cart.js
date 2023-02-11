@@ -105,7 +105,6 @@ const Cart = () => {
                     name="phone"
                     fullWidth
                     size="small"
-                    type="number"
                   />
                 </Box>
                 <Box>

@@ -150,34 +150,11 @@ export default function ProductDetail({ productDetail, list, hostname }) {
               </Carousel>
             </Box>
           </Grid>
-          <Grid
-            item
-            xl={6}
-            lg={6}
-            md={6}
-            sm={12}
-            xs={12}
-            sx={{
-              textAlign: "start",
-              "@media(max-width:768px)": {
-                textAlign: "center",
-              },
-            }}
-          >
+          <Grid item xl={6} lg={6} md={6} sm={12} xs={12}>
             <Typography sx={{ fontWeight: 700, fontSize: "30px" }}>
               {productDetail.name}
             </Typography>
-            <Stack
-              spacing={1}
-              sx={{ mt: "20px" }}
-              alignItems={{
-                xl: "flex-start",
-                lg: "flex-start",
-                md: "flex-start",
-                sm: "center",
-                xs: "center",
-              }}
-            >
+            <Stack spacing={1} sx={{ mt: "20px" }}>
               <Stack direction="row" spacing={1}>
                 <Typography>Категория:</Typography>
                 <Typography sx={{ fontWeight: 700 }}>
@@ -192,7 +169,11 @@ export default function ProductDetail({ productDetail, list, hostname }) {
               </Stack>
               <Stack direction="row" spacing={1}>
                 <Typography sx={{ fontWeight: 700 }}>
-                  {productDetail.in_stock ? "В наличие" : "Нет в наличие"}
+                  {productDetail.in_stock ? (
+                    "В наличие"
+                  ) : (
+                    <span style={{ color: "gray" }}>Нет в наличие</span>
+                  )}
                 </Typography>
               </Stack>
               <Stack direction="row" spacing={1}>
@@ -201,69 +182,65 @@ export default function ProductDetail({ productDetail, list, hostname }) {
                   {productDetail.price + " сом" || ""}
                 </Typography>
               </Stack>
+              <Stack direction="row" spacing={1}>
+                <Typography>
+                  {productDetail.description
+                    ? `Описание: ${productDetail.description}`
+                    : ""}
+                </Typography>
+              </Stack>
             </Stack>
-            <Stack
-              direction="row"
-              sx={{ mt: "20px" }}
-              justifyContent={{
-                xl: "flex-start",
-                lg: "flex-start",
-                md: "flex-start",
-                sm: "center",
-                xs: "center",
-              }}
-            >
-              <Typography
-                sx={{ cursor: "pointer" }}
-                onClick={() => setCounter(counter - 1)}
-              >
-                -
-              </Typography>
-              <OutlinedInput
-                type="number"
-                sx={{
-                  width: "62px",
-                  border: "0.883721px solid #000000",
-                  borderRadius: "4.4186px",
-                  margin: "0 12px",
-                  "@media(max-width:650px)": {
-                    width: "55px",
-                    fontSize: "12px",
-                  },
-                }}
-                error={counter <= 0}
-                value={counter}
-                onChange={e => setCounter(Number(e.target.value))}
-                inputProps={{
-                  style: {
-                    padding: "2px 14px",
-                  },
-                }}
-              />
-              <Typography
-                sx={{ cursor: "pointer" }}
-                onClick={() => setCounter(counter + 1)}
-              >
-                +
-              </Typography>
-            </Stack>
-            <Button onClick={addToCart} variant="contained" sx={{ mt: "16px" }}>
-              Добавить в корзину
-            </Button>
+            {productDetail.in_stock ? (
+              <Box>
+                <Stack direction="row" sx={{ mt: "20px" }}>
+                  <Typography
+                    sx={{ cursor: "pointer" }}
+                    onClick={() => setCounter(counter - 1)}
+                  >
+                    -
+                  </Typography>
+                  <OutlinedInput
+                    type="number"
+                    sx={{
+                      width: "62px",
+                      border: "0.883721px solid #000000",
+                      borderRadius: "4.4186px",
+                      margin: "0 12px",
+                      "@media(max-width:650px)": {
+                        width: "55px",
+                        fontSize: "12px",
+                      },
+                    }}
+                    error={counter <= 0}
+                    value={counter}
+                    onChange={e => setCounter(Number(e.target.value))}
+                    inputProps={{
+                      style: {
+                        padding: "2px 14px",
+                      },
+                    }}
+                  />
+                  <Typography
+                    sx={{ cursor: "pointer" }}
+                    onClick={() => setCounter(counter + 1)}
+                  >
+                    +
+                  </Typography>
+                </Stack>
+                <Button
+                  onClick={addToCart}
+                  variant="contained"
+                  sx={{ mt: "16px" }}
+                >
+                  Добавить в корзину
+                </Button>
+              </Box>
+            ) : null}
+
             <Typography sx={{ fontWeight: 700, mt: "20px", mb: "8px" }}>
               Поделиться в:
             </Typography>
-            <Stack
-              direction="row"
-              spacing={2}
-              justifyContent={{
-                xl: "flex-start",
-                lg: "flex-start",
-                md: "flex-start",
-                sm: "center",
-                xs: "center",
-              }}
-            >
+            <Stack direction="row" spacing={2}>
               {shareLinks.map(link => {
                 return (
                   <Box
@@ -289,7 +266,7 @@ export default function ProductDetail({ productDetail, list, hostname }) {
             fontSize: "25px",
             fontWeight: 700,
             mb: "35px",
-            mt: "50px",
+            mt: "70px",
             textAlign: "center",
             "@media(max-width:968px)": {
               fontSize: "23px",
