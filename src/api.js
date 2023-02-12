@@ -1,4 +1,4 @@
-const rootApi = 'https://beggi.kg'
+const rootApi = "https://beggi.kg"
 
 const endpoints = {
   products: filter => {
@@ -7,7 +7,7 @@ const endpoints = {
       price_from: filter.price_from ? filter.price_from : "",
       price_to: filter.price_to ? filter.price_to : "",
       page: filter.page ? filter.page : "1",
-      per_page: filter.per_page ? filter.per_page : 10,
+      per_page: filter.per_page ? filter.per_page : 20,
       category: filter.category ? filter.category : "",
       sub_category: filter.sub_category || "",
     }
