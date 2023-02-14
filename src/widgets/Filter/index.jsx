@@ -21,7 +21,6 @@ const Filter = () => {
   const router = useRouter()
   const [category, setCategory] = useState([])
   const [sub_category, setSubCategory] = useState([])
-
   const [showFilter, setShowFilter] = useState(false)
   const [filter, setFilter] = React.useState({
     in_stock: router.query.in_stock
@@ -45,59 +44,75 @@ const Filter = () => {
         ...filter,
         [event.target.name]: event.target.value,
       })
-      router.push({
-        pathname: router.pathname,
-        query: {
-          in_stock: filter.in_stock ? 1 : 0,
-          price_from: filter.price_from,
-          price_to: filter.price_to,
-          category: event.target.value,
-          sub_category: filter.sub_category,
+      router.push(
+        {
+          pathname: router.pathname,
+          query: {
+            in_stock: filter.in_stock ? 1 : 0,
+            price_from: filter.price_from,
+            price_to: filter.price_to,
+            category: event.target.value,
+            sub_category: filter.sub_category,
+          },
         },
-      })
+        undefined,
+        { scroll: false }
+      )
     } else if (event.target.name == "sub_category") {
       setFilter({
         ...filter,
         [event.target.name]: event.target.value,
       })
-      router.push({
+      router.push(
+        {
+          pathname: router.pathname,
+          query: {
+            in_stock: filter.in_stock ? 1 : 0,
+            price_from: filter.price_from,
+            price_to: filter.price_to,
+            category: filter.category,
+            sub_category: event.target.value,
+          },
+        },
+        undefined,
+        { scroll: false }
+      )
+    } else {
+      setFilter({
+        ...filter,
+        [event.target.name]: event.target.checked,
+      })
+      router.push(
+        {
+          pathname: router.pathname,
+          query: {
+            in_stock: filter.in_stock ? 0 : 1,
+            price_from: filter.price_from,
+            price_to: filter.price_to,
+            category: filter.category,
+            sub_category: filter.sub_category,
+          },
+        },
+        undefined,
+        { scroll: false }
+      )
+    }
+  }
+  const priceClick = () => {
+    router.push(
+      {
         pathname: router.pathname,
         query: {
           in_stock: filter.in_stock ? 1 : 0,
           price_from: filter.price_from,
           price_to: filter.price_to,
           category: filter.category,
-          sub_category: event.target.value,
-        },
-      })
-    } else {
-      setFilter({
-        ...filter,
-        [event.target.name]: event.target.checked,
-      })
-      router.push({
-        pathname: router.pathname,
-        query: {
-          in_stock: filter.in_stock ? 0 : 1,
-          price_from: filter.price_from,
-          price_to: filter.price_to,
-          category: filter.category,
           sub_category: filter.sub_category,
         },
-      })
-    }
-  }
-  const priceClick = () => {
-    router.push({
-      pathname: router.pathname,
-      query: {
-        in_stock: filter.in_stock ? 1 : 0,
-        price_from: filter.price_from,
-        price_to: filter.price_to,
-        category: filter.category,
-        sub_category: filter.sub_category,
       },
-    })
+      undefined,
+      { scroll: false }
+    )
   }
   const getCategories = async () => {
     const res = await fetch(endpoints.category)

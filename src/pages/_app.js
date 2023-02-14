@@ -1,7 +1,5 @@
 import { CartContext } from "@/features/Cart/CartContext"
 import "@/styles/globals.css"
-import { usePageLoading } from "@/usePageLoading"
-import Loading from "@/widgets/Loading"
 import { createTheme, ThemeProvider } from "@mui/material/styles"
 import { useMemo, useState } from "react"
 import { ToastContainer } from "react-toastify"
@@ -61,10 +59,9 @@ export default function App({ Component, pageProps }) {
   const [cart, setCart] = useLocalStorage("cart", [])
 
   const value = useMemo(() => ({ cart, setCart }), [cart, setCart])
-  const { isPageLoading } = usePageLoading()
-  if (isPageLoading) {
-    return <Loading />
-  }
+  // if (isPageLoading) {
+  //   return <Loading />
+  // }
   return (
     <CartContext.Provider value={value}>
       <ThemeProvider theme={theme}>

@@ -10,13 +10,17 @@ const Catalog = ({ list }) => {
   const [page, setPage] = React.useState(Number(router.query.page) || 1)
   const handleChangePage = (event, page) => {
     setPage(page)
-    router.push({
-      pathname: router.pathname,
-      query: {
-        ...router.query,
-        page,
+    router.push(
+      {
+        pathname: router.pathname,
+        query: {
+          ...router.query,
+          page,
+        },
       },
-    })
+      undefined,
+      { scroll: false }
+    )
   }
 
   return (
