@@ -30,6 +30,7 @@ export default function Home({ list }) {
 
   return (
     <MainLayout title="Главная">
+      <Box sx={{ height: "70px" }}></Box>
       <Banner />
       <Box
         sx={{

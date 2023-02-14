@@ -45,6 +45,8 @@ const Cart = () => {
   return (
     <MainLayout title="Корзина">
       <Modal open={open} handleClose={handleClose} input={input} />
+      <Box sx={{ height: "70px" }}></Box>
+
       <Box sx={boxStyles}>
         <Typography
           component="h1"

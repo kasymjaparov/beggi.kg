@@ -13,6 +13,10 @@ const Header = () => {
       alignItems="center"
       sx={{
         paddingX: "80px",
+        position: "fixed",
+        top: 0,
+        width: "100vw",
+        zIndex: 5,
         height: "70px",
         background: "black",
         "@media(max-width:1200px )": {

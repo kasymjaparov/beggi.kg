@@ -16,6 +16,7 @@ import { useRouter } from "next/router"
 
 export default function ProductDetail({ productDetail, list, hostname }) {
   const [counter, setCounter] = useState(1)
+  const galleryExist = productDetail.product_gallery.length >= 1
   const { cart, setCart } = useContext(CartContext)
   const router = useRouter()
   const currentURL = `${hostname}${router.asPath}`
@@ -47,6 +48,8 @@ export default function ProductDetail({ productDetail, list, hostname }) {
   }
   return (
     <MainLayout title={productDetail.name || "Не найдено"}>
+      <Box sx={{ height: "80px" }}></Box>
+
       <Box
         sx={{
           my: "30px",
@@ -63,7 +66,14 @@ export default function ProductDetail({ productDetail, list, hostname }) {
         }}
       >
         <Grid container spacing={2}>
-          <Grid item xl={6} lg={6} md={6} sm={12} xs={12}>
+          <Grid
+            item
+            xl={galleryExist ? 6 : 0}
+            lg={galleryExist ? 6 : 0}
+            md={galleryExist ? 6 : 0}
+            sm={galleryExist ? 12 : 0}
+            xs={galleryExist ? 12 : 0}
+          >
             <Box
               sx={{
                 width: "500px",
@@ -310,6 +320,11 @@ export async function getServerSideProps(context) {
   )
   const list = await resList.json()
   const productDetail = await res.json()
+  if (productDetail.detail) {
+    return {
+      notFound: true,
+    }
+  }
   return {
     props: {
       productDetail,

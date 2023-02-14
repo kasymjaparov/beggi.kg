@@ -1,9 +1,10 @@
+import { Box } from "@mui/material"
 import Head from "next/head"
 import React from "react"
 
 const withHead = ({ children, title }) => {
   return (
-    <>
+    <Box>
       <Head>
         <title>{title}</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,7 +30,7 @@ const withHead = ({ children, title }) => {
         />
       </Head>
       {children}
-    </>
+    </Box>
   )
 }
 

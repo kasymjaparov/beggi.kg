@@ -1,5 +1,4 @@
-import Item from "@/widgets/Item"
-import { Grid, Box, Skeleton } from "@mui/material"
+import { Grid, Box } from "@mui/material"
 import React from "react"
 import Filter from "@/widgets/Filter"
 import CustomPagination from "@/widgets/Pagination"
