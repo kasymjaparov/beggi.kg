@@ -1,11 +1,12 @@
 import Item from "@/widgets/Item"
-import { Grid, Box } from "@mui/material"
+import { Grid, Box, Skeleton } from "@mui/material"
 import React from "react"
 import Filter from "@/widgets/Filter"
 import CustomPagination from "@/widgets/Pagination"
 import { useRouter } from "next/router"
+import CatalogList from "./List"
 
-const Catalog = ({ list }) => {
+const Catalog = ({ list, loading }) => {
   const router = useRouter()
   const [page, setPage] = React.useState(Number(router.query.page) || 1)
   const handleChangePage = (event, page) => {
@@ -35,19 +36,7 @@ const Catalog = ({ list }) => {
           <Filter />
         </Grid>
         <Grid item xl={9} lg={9} md={12} sm={12} xs={12}>
-          <Grid container spacing={2}>
-            {list.results.length >= 1 ? (
-              list.results.map((item, index) => {
-                return (
-                  <Grid key={index} item xl={3} lg={3} md={4} sm={6} xs={12}>
-                    <Item data={item} />
-                  </Grid>
-                )
-              })
-            ) : (
-              <Box sx={{ mt: "20px", fontWeight: 700 }}>Товары отсутствуют</Box>
-            )}
-          </Grid>
+          <CatalogList list={list} loading={loading} />
         </Grid>
         <CustomPagination
           handleChangePage={handleChangePage}
