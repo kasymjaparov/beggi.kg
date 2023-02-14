@@ -1,4 +1,4 @@
-const rootApi = "https://beggi.kg"
+const rootApi = "https://beggi.kg/api"
 
 const endpoints = {
   products: filter => {
