@@ -48,8 +48,6 @@ export default function ProductDetail({ productDetail, list, hostname }) {
   }
   return (
     <MainLayout title={productDetail.name || "Не найдено"}>
-      <Box sx={{ height: "80px" }}></Box>
-
       <Box
         sx={{
           my: "30px",

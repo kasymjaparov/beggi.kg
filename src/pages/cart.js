@@ -16,7 +16,7 @@ import { toastError } from "@/toast"
 const boxStyles = {
   background: "#fff",
   minHeight: "80vh",
-  padding: "60px 80px 0px 80px",
+  padding: "60px 80px 40px 80px",
   "@media(max-width:1200px )": {
     padding: "30px 70px 40px 70px",
   },
@@ -45,7 +45,6 @@ const Cart = () => {
   return (
     <MainLayout title="Корзина">
       <Modal open={open} handleClose={handleClose} input={input} />
-      <Box sx={{ height: "70px" }}></Box>
 
       <Box sx={boxStyles}>
         <Typography
