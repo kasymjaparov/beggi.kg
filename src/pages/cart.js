@@ -12,6 +12,8 @@ import CartItem from "@/widgets/CartItem"
 import { CartContext } from "@/features/Cart/CartContext"
 import Modal from "@/widgets/Modal"
 import { toastError } from "@/toast"
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"
+import Link from "next/link"
 
 const boxStyles = {
   background: "#fff",

@@ -13,6 +13,8 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp"
 import TelegramIcon from "@mui/icons-material/Telegram"
 import FacebookIcon from "@mui/icons-material/Facebook"
 import { useRouter } from "next/router"
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"
+import Link from "next/link"
 
 export default function ProductDetail({ productDetail, list, hostname }) {
   const [counter, setCounter] = useState(1)
@@ -48,6 +50,49 @@ export default function ProductDetail({ productDetail, list, hostname }) {
   }
   return (
     <MainLayout title={productDetail.name || "Не найдено"}>
+      <Box
+        sx={{
+          position: "fixed",
+          right: "30px",
+          bottom: "60px",
+          width: "60px",
+          height: "60px",
+          background: "#1976d2",
+          borderRadius: "50%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          zIndex: "9",
+          boxShadow:
+            "0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%)",
+        }}
+      >
+        <Link href="/cart">
+          <Box sx={{ position: "relative", cursor: "pointer" }}>
+            <ShoppingCartIcon sx={{ color: "#fff" }} />
+            {cart.length >= 1 ? (
+              <Box
+                sx={{
+                  padding: "5px",
+                  color: "#fff",
+                  position: "absolute",
+                  right: "-20px",
+                  bottom: "-20px",
+                  background: "red",
+                  borderRadius: "50%",
+                  width: "25px",
+                  height: "25px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                {cart.length}
+              </Box>
+            ) : null}
+          </Box>
+        </Link>
+      </Box>
       <Box
         sx={{
           my: "30px",

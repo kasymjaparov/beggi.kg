@@ -152,7 +152,7 @@ function Header() {
 
         <Box
           sx={{
-            zIndex: 100,
+            zIndex: 1001,
             display: "flex",
             position: "fixed",
             top: `${isMobileMenuActive ? "0" : "-180%"}`,

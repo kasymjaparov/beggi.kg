@@ -95,3 +95,6 @@ input[type="number"] {
 .custom-table-pagination {
   margin: 30px auto 0px auto;
 }
+.react-multiple-carousel__arrow {
+  z-index: 2 !important;
+}
