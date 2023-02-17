@@ -12,6 +12,7 @@ import { useContext, useEffect, useState } from "react"
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart"
 import { CartContext } from "@/features/Cart/CartContext"
 import Link from "next/link"
+import Banner from "@/features/Main/Banner"
 
 export default function Home({ list }) {
   const router = useRouter()
@@ -32,6 +33,7 @@ export default function Home({ list }) {
 
   return (
     <MainLayout title="Главная">
+      <Banner/>
       <Box
         sx={{
           position: "fixed",
