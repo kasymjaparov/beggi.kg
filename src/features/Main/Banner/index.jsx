@@ -12,28 +12,32 @@ const Banner = () => {
     >
       <Grid container alignItems="center">
         <Grid item xl={6} lg={4} md={12} sm={12} xs={12} sx={{ pl: "30px" }}>
-          <Box
-            component="span"
+          <Typography
+            component="h1"
             sx={{
-              background: "#000",
-              color: "#fff",
-              padding: "4px 10px",
+              fontSize: "50px",
+              mt: "30px",
+              "@media(max-width:640px)": {
+                fontSize: "30px",
+                mt: "0px",
+                mb: "20px",
+              },
             }}
           >
-            Новое поступление
-          </Box>
-          <Typography component="h1" sx={{ fontSize: "50px", mt: "30px" }}>
-            Новая весенняя коллекция
+            Качество пошива которое увеличит ваши продажи
           </Typography>
           <Typography
             component="h2"
             sx={{
-              mb: "16px",
+              fontSize: "30px",
+              my: "16px",
+              "@media(max-width:640px)": {
+                fontSize: "19px",
+                mt: "0px",
+              },
             }}
           >
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt,
-            fugiat neque aspernatur tempore nam aliquam aliquid ab officiis quas
-            quisquam praesentium officia!
+            Поможем запустить производство одежды "под ключ"
           </Typography>
           <a href="#catalog">
             <Button
@@ -49,7 +53,7 @@ const Banner = () => {
                 },
               }}
             >
-              Посмотреть
+              Посмотреть каталог
             </Button>
           </a>
         </Grid>

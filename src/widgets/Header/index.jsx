@@ -39,11 +39,11 @@ const headerLinksStyles = {
 }
 
 const links = [
-  { text: "Каталог", href: "#catalog" },
-  { text: "О компании", href: "#about" },
-  { text: "FAQ", href: "#faq" },
-  { text: "Как заказать", href: "#advantages" },
-  { text: "Контакты", href: "#contact" },
+  { text: "Каталог", href: "/#catalog" },
+  { text: "О компании", href: "/#about" },
+  { text: "FAQ", href: "/#faq" },
+  { text: "Как заказать", href: "/#advantages" },
+  { text: "Контакты", href: "/#contact" },
 ]
 
 function Header() {

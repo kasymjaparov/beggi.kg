@@ -8,11 +8,11 @@ import logo_image from "/public/logo.png"
 
 const Footer = () => {
   const navLinks = [
-    { text: "Каталог", href: "#catalog" },
-    { text: "О компании", href: "#about" },
+    { text: "Каталог", href: "/#catalog" },
+    { text: "О компании", href: "/#about" },
     { text: "FAQ", href: "#faq" },
-    { text: "Как заказать", href: "#advantages" },
-    { text: "Контакты", href: "#contact" },
+    { text: "Как заказать", href: "/#advantages" },
+    { text: "Контакты", href: "/#contact" },
   ]
 
   return (
