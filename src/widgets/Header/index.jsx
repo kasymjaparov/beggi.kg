@@ -4,6 +4,8 @@ import styles from "./style.module.css"
 import { useRouter } from "next/router"
 import CloseIcon from "@mui/icons-material/Close"
 import MenuIcon from "@mui/icons-material/Menu"
+import logo_image from "/public/logo.png"
+import Image from "next/image"
 
 const headerTitleStyles = {
   fontWeight: 700,
@@ -97,7 +99,7 @@ function Header() {
           sx={{ cursor: "pointer" }}
         >
           <Typography variant="h1" sx={headerTitleStyles}>
-            BEGGI
+            <Image src={logo_image} alt="BEGGI" width={50} height={50} />
           </Typography>
         </Grid>
 
@@ -187,7 +189,7 @@ function Header() {
                 fontWeight: 700,
               }}
             >
-              BEGGI
+              <Image src={logo_image} alt="BEGGI" width={100} height={100} />
             </Typography>
           </Stack>
           <Stack

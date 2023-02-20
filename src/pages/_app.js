@@ -59,9 +59,6 @@ export default function App({ Component, pageProps }) {
   const [cart, setCart] = useLocalStorage("cart", [])
 
   const value = useMemo(() => ({ cart, setCart }), [cart, setCart])
-  // if (isPageLoading) {
-  //   return <Loading />
-  // }
   return (
     <CartContext.Provider value={value}>
       <ThemeProvider theme={theme}>

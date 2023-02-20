@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import whatsapp from "/public/whatsapp.svg"
 import instagram from "/public/instagram.svg"
+import logo_image from "/public/logo.png"
 
 const Footer = () => {
   const navLinks = [
@@ -68,9 +69,9 @@ const Footer = () => {
                 },
               },
               "@media(max-width:768px)": {
-               "& h5": {
-                marginLeft: "0px",
-              },
+                "& h5": {
+                  marginLeft: "0px",
+                },
               },
             }}
           >
@@ -84,7 +85,7 @@ const Footer = () => {
                 },
               }}
             >
-              BEGGI
+              <Image src={logo_image} alt="BEGGI" width={100} height={100} />
             </Typography>
           </Stack>
         </Grid>
