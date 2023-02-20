@@ -15,8 +15,14 @@ const Banner = () => {
           <Typography
             component="h1"
             sx={{
-              fontSize: "50px",
+              fontSize: "45px",
               mt: "30px",
+              "@media(max-width:1200px)": {
+                fontSize: "40px",
+              },
+              "@media(max-width:1200px)": {
+                fontSize: "35px",
+              },
               "@media(max-width:640px)": {
                 fontSize: "30px",
                 mt: "0px",
@@ -31,6 +37,15 @@ const Banner = () => {
             sx={{
               fontSize: "30px",
               my: "16px",
+              "@media(max-width:1020px)": {
+                fontSize: "28px",
+              },
+              "@media(max-width:968px)": {
+                fontSize: "26px",
+              },
+              "@media(max-width:768px)": {
+                fontSize: "22px",
+              },
               "@media(max-width:640px)": {
                 fontSize: "19px",
                 mt: "0px",
